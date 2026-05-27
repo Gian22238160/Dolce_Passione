@@ -1,4 +1,4 @@
-# Dolce_Passione
+# Dolce Passione
 Proyecto de JavaScript Avanzado
 ***
 Integrantes:
