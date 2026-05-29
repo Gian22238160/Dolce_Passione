@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-warning" routerLink="/home">DOLCE PASSIONE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/productos" routerLinkActive="active">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/ofertas" routerLinkActive="active">Ofertas</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/tienda" routerLinkActive="active">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contacto" routerLinkActive="active">Contacto</a></li>
+        
+        @if (!bakeryService.estaLogueado()) {
+          <li class="nav-item">
+            <a class="btn btn-outline-warning btn-sm px-3 ms-lg-3 mt-2 mt-lg-0" routerLink="/mi-cuenta">Mi Cuenta</a>
+          </li>
+        } @else {
+          <li class="nav-item">
+            <a class="btn btn-warning btn-sm px-3 ms-lg-3 mt-2 mt-lg-0 text-dark fw-bold" routerLink="/dashboard">Dashboard</a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,72 @@
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <h1 class="display-5 fw-bold text-dark">Nuestro Catálogo Exclusivo </h1>
+    <p class="text-muted lead">Explora las delicias artesanales preparadas con insumos premium para tus momentos especiales.</p>
+  </div>
+
+  <div class="row g-3 mb-5 justify-content-center">
+    <div class="col-12 col-md-6">
+      <input type="text" 
+             [(ngModel)]="textoBusqueda" 
+             (input)="filtrarProductos()" 
+             class="form-control form-control-lg border shadow-sm rounded-pill px-4" 
+             placeholder="Buscar pasteles finos...">
+    </div>
+    <div class="col-12 col-md-4">
+      <select [(ngModel)]="categoriaSeleccionada" 
+              (change)="filtrarProductos()" 
+              class="form-select form-select-lg border shadow-sm rounded-pill px-4">
+        <option value="">Todas las categorías</option>
+        <option value="Tortas Finas">Tortas Finas</option>
+        <option value="Cheesecakes">Cheesecakes</option>
+        <option value="Porciones Por Día">Porciones Por Día</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    @for (item of productosFiltrados; track item.id) {
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white transition-card">
+          
+          <div class="position-relative overflow-hidden bg-light" style="height: 240px;">
+            <img [src]="item.imagen" [alt]="item.nombre" class="w-100 h-100 object-fit-cover">
+            <span class="position-absolute top-3 start-3 badge bg-dark bg-opacity-75 text-warning fw-bold px-3 py-2 rounded-pill shadow-sm">
+              {{ item.categoria }}
+            </span>
+          </div>
+
+          <div class="card-body p-4 d-flex flex-column">
+            <h5 class="card-title fw-bold text-dark mb-2">{{ item.nombre }}</h5>
+            
+            <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+              <div>
+                <span class="text-muted small d-block">Precio</span>
+                <span class="fs-4 fw-extrabold text-success">S/ {{ item.precio | number:'1.2-2' }}</span>
+              </div>
+              <div class="text-end">
+                <span class="text-muted small d-block">Stock disp.</span>
+                <span class="badge rounded-pill fw-bold" 
+                      [ngClass]="item.stock <= 5 ? 'bg-danger text-white' : 'bg-warning text-dark'">
+                  {{ item.stock }} unids
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer bg-transparent border-0 px-4 pb-4 pt-0">
+            <button class="btn btn-warning w-100 fw-bold text-dark rounded-pill shadow-sm py-2">
+               Agregar al Pedido
+            </button>
+          </div>
+
+        </div>
+      </div>
+    } @empty {
+      <div class="col-12 text-center py-5">
+        <h4 class="fw-bold text-secondary mt-3">No se encontraron productos coincidentes</h4>
+        <p class="text-muted">Prueba cambiando los términos de la búsqueda o el filtro de categoría.</p>
+      </div>
+    }
+  </div>
+</div>

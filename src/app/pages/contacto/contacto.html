@@ -1,0 +1,94 @@
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold text-dark">Ponte en Contacto con Nosotros </h2>
+    <p class="text-muted lead">¿Tienes alguna duda, evento especial o pedido masivo? Déjanos tus datos y un asesor te escribirá.</p>
+  </div>
+
+  <div class="row g-5">
+    <!-- Columna Izquierda: Información de soporte -->
+    <div class="col-12 col-lg-5">
+      <div class="card bg-dark text-white p-4 h-100 rounded-4 border-0 shadow-sm">
+        <h4 class="fw-bold text-warning mb-4">Atención al Cliente</h4>
+        <p class="mb-4 text-light">Si prefieres una comunicación directa, puedes utilizar nuestros canales oficiales de soporte técnico y comercial.</p>
+        
+        <div class="mb-3 d-flex align-items-center">
+          <span class="fs-4 me-3"></span>
+          <div>
+            <h6 class="m-0 fw-bold text-warning">Central Telefónica</h6>
+            <p class="text-white"> Llama al : 937 154 243</p>
+          </div>
+        </div>
+
+        <div class="mb-3 d-flex align-items-center">
+          <span class="fs-4 me-3"> </span>
+          <div>
+            <h6 class="m-0 fw-bold text-warning">Correo de Consultas</h6>
+            <p class="text-white"> Envia un correo al: DolcePassione@gmail.com </p>
+          </div>
+        </div>
+
+        <div class="mt-auto pt-4 border-top border-secondary">
+          <p class="text-white">* Las solicitudes web son atendidas en un plazo máximo de 24 horas hábiles.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna Derecha: Formulario interactivo -->
+    <div class="col-12 col-lg-7">
+      <div class="p-4 bg-white rounded-4 border shadow-sm">
+        
+        <!-- Directiva Estructural Condicional de Angular -->
+        @if (formularioEnviado) {
+          <div class="alert alert-success d-flex flex-column align-items-center py-5 text-center rounded-3" role="alert">
+            <h4 class="alert-heading fw-bold">¡Mensaje recibido con éxito!</h4>
+            <p class="mb-0">Gracias por escribirnos. Un asesor de Dolce Passione se comunicará contigo muy pronto.</p>
+            <button (click)="formularioEnviado = false" class="btn btn-outline-success btn-sm mt-4 px-4 rounded-pill">
+              Enviar otro mensaje
+            </button>
+          </div>
+        } @else {
+          <h4 class="fw-bold text-dark mb-4">Formulario de Solicitud</h4>
+          
+          <!-- Event Binding (ngSubmit) -->
+          <form (ngSubmit)="enviarFormulario()">
+            
+            <div class="row g-3">
+              <!-- Campo: Nombre completo -->
+              <div class="col-md-12">
+                <label class="form-label fw-semibold text-secondary">Nombre Completo <span class="text-danger">*</span></label>
+                <!-- Two-Way Data Binding con ngModel -->
+                <input type="text" [(ngModel)]="nombre" name="nombre" class="form-control" placeholder="Ingresa tus nombres y apellidos" required>
+              </div>
+
+              <!-- Campo: Correo electrónico -->
+              <div class="col-md-6">
+                <label class="form-label fw-semibold text-secondary">Correo Electrónico <span class="text-danger">*</span></label>
+                <input type="email" [(ngModel)]="correo" name="correo" class="form-control" placeholder="ejemplo@correo.com" required>
+              </div>
+
+              <!-- Campo: Teléfono Celular -->
+              <div class="col-md-6">
+                <label class="form-label fw-semibold text-secondary">Teléfono Celular</label>
+                <input type="tel" [(ngModel)]="telefono" name="telefono" class="form-control" placeholder="987654321">
+              </div>
+
+              <!-- Campo: Mensaje o Detalle -->
+              <div class="col-12">
+                <label class="form-label fw-semibold text-secondary">¿En qué podemos ayudarte? <span class="text-danger">*</span></label>
+                <textarea [(ngModel)]="mensaje" name="mensaje" class="form-control" rows="4" placeholder="Escribe aquí los detalles de tu consulta o cotización especial..." required></textarea>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-2">
+              <button type="submit" class="btn btn-warning px-5 py-2 fw-bold text-dark rounded-pill shadow-sm">
+                Enviar Solicitud
+              </button>
+            </div>
+
+          </form>
+        }
+
+      </div>
+    </div>
+  </div>
+</div>

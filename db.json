@@ -1,0 +1,52 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Torta Fina de Selva Negra",
+      "imagen": "https://i.pinimg.com/736x/1e/d4/d1/1ed4d16aa3a1164811582361c113046b.jpg",
+      "categoria": "Tortas Finas",
+      "precio": 85.00,
+      "stock": 8
+    },
+    {
+      "id": "2",
+      "nombre": "Cheesecake de Frutos Rojos",
+      "imagen": "https://i.pinimg.com/736x/ae/ad/ed/aeaded7004e145b5e3a7910fca3776e3.jpg",
+      "categoria": "Cheesecakes",
+      "precio": 75.00,
+      "stock": 5
+    },
+    {
+      "id": "3",
+      "nombre": "Torta de Tres Leches Premium",
+      "imagen": "https://i.pinimg.com/1200x/23/5a/14/235a1426f9878b7469bf5ff0b9390fe3.jpg",
+      "categoria": "Tortas Finas",
+      "precio": 65.00,
+      "stock": 12
+    },
+    {
+      "id": "4",
+      "nombre": "Porción de Carrot Cake",
+      "imagen": "https://i.pinimg.com/1200x/4c/63/02/4c6302f4c0eb7b15ff0b55101644d6a0.jpg",
+      "categoria": "Porciones Por Día",
+      "precio": 12.50,
+      "stock": 15
+    },
+    {
+      "id": "5",
+      "nombre": "Cheesecake de Maracuyá",
+      "imagen": "https://i.pinimg.com/1200x/53/02/44/530244657338a52ffbc4f036ba165869.jpg",
+      "categoria": "Cheesecakes",
+      "precio": 70.00,
+      "stock": 6
+    },
+    {
+      "id": "6",
+      "nombre": "Porción de Torta de Chocolate",
+      "imagen": "https://i.pinimg.com/1200x/2c/30/24/2c302496197d48115f20a161aa49a9ea.jpg",
+      "categoria": "Porciones Por Día",
+      "precio": 14.00,
+      "stock": 20
+    }
+  ]
+}

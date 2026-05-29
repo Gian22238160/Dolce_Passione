@@ -1,0 +1,26 @@
+<div class="container my-5 py-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+      <div class="card p-4 shadow-sm border-0 rounded-4 bg-white">
+        <div class="text-center mb-4">
+          <h3 class="fw-bold text-dark m-0">Club Dolce Passione</h3>
+          <small class="text-muted">Acceso restringido para personal autorizado</small>
+        </div>
+        
+        <form (ngSubmit)="ejecutarLoginSimulado()">
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-secondary">Correo Electrónico</label>
+            <input type="email" [(ngModel)]="emailInput" name="email" class="form-control py-2" placeholder="ejemplo@correo.com" required>
+          </div>
+          <div class="mb-4">
+            <label class="form-label fw-semibold text-secondary">Contraseña</label>
+            <input type="password" [(ngModel)]="passwordInput" name="password" class="form-control py-2" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-warning w-100 py-2 fw-bold rounded-3 text-dark shadow-sm">
+            Iniciar Sesión
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

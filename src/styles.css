@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+body {
+  background-color: #e2c79f; /* Un fondo cálido pastel opcional */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*Estilos Ofertas */
+.nav-pills .nav-link {
+  color: #495057;
+  background-color: transparent;
+}
+
+.nav-pills .nav-link.active {
+  background: linear-gradient(135deg, #052730 0%, #083d48 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(transparent, rgba(0,0,0,0.75));
+}
+
+
