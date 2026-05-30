@@ -15,7 +15,7 @@ export interface Producto {
   providedIn: 'root'
 })
 export class BakeryService {
-  private apiUrl = 'http://localhost:3000/productos';
+  private apiUrl = 'https://my-json-server.typicode.com/meyder2003-spec/Practica2/productos';
 
   constructor(private http: HttpClient) {}
 
